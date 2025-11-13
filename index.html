@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jeu de la Vie — TypeScript</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="left">
+    <canvas id="gameCanvas" width="600" height="600"></canvas>
+    <div class="small">Clique sur la grille pour activer / désactiver une cellule.</div>
+  </div>
+
+  <div id="right">
+    <div class="controls">
+      <button id="startBtn">▶ Démarrer</button>
+      <button id="stopBtn" disabled>⏸ Arrêter</button>
+      <button id="stepBtn">⏭ Pas</button>
+      <button id="clearBtn">🧹 Effacer</button>
+      <button id="randomBtn">🎲 Aléatoire</button>
+    </div>
+
+    <div>
+      <label>Vitesse (ms) : <span id="speedVal">200</span></label><br/>
+      <input id="speedRange" type="range" min="20" max="1000" step="10" value="200" />
+    </div>
+
+    <div>
+      <label>Mode bords :</label><br/>
+      <select id="wrapSelect">
+        <option value="wrap" selected>Toroïde (bords reliés)</option>
+        <option value="nowrap">Sans wrap (bords morts)</option>
+      </select>
+    </div>
+
+    <div>
+      <strong>Infos :</strong>
+      <div>Génération : <span id="gen">0</span></div>
+      <div>Population : <span id="pop">0</span></div>
+    </div>
+  </div>
+
+  <script type="module" src="dist/main.js"></script>
+</body>
+</html>
